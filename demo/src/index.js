@@ -1,7 +1,12 @@
 import React, {Component} from 'react'
 import {render} from 'react-dom'
 
-import {SupSubFormatter} from '../../src'
+import {
+  SupSubFormatter,
+  CurationStampParser,
+  ReportLink,
+  Symbols
+} from '../../src'
 
 class Demo extends Component {
   render() {
