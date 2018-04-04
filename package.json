@@ -1,7 +1,7 @@
 {
   "name": "react-flybase-utils",
-  "version": "1.0.0",
-  "description": "react-flybase-utils React component",
+  "version": "0.1.0",
+  "description": "A react component and function library for FlyBase",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
