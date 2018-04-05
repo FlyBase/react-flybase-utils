@@ -16,9 +16,14 @@ describe('<CurationStampParser />', () => {
     expect(wrapper.contains('myGene')).toBe(true);
   });
 
-  it('Renders link w/ sup', () => {
+  it('link w/ sup', () => {
     const wrapper = mount(<CurationStampParser text={'blah @myGene<up>up</up>@ blah'} />);
     expect(wrapper.contains(<sup>up</sup>)).toBe(true);
+  });
+
+  it('URI encoding', () => {
+    const wrapper = mount(<CurationStampParser text={'blah @Rnor\\myGene<up>up</up>@ blah'} />);
+    expect(wrapper.find('a[href="/search/Rnor%5CmyGene%5Bup%5D"]').length).toBe(1);
   });
 
 });

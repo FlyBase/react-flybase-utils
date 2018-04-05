@@ -26,7 +26,7 @@ function CurationStampParser({text}) {
         if (atsRe.test(val)) {
           const linkText = val.replace(atsRe,'$1');
           return (
-            <a key={i} href={`/search/${SgmlToAscii(linkText)}`}>
+            <a key={i} href={`/search/${encodeURI(SgmlToAscii(linkText))}`}>
               <SupSubFormatter text={linkText}/>
             </a>
           );
