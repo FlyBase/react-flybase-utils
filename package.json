@@ -1,7 +1,7 @@
 {
   "name": "react-flybase-utils",
-  "version": "1.0.0",
-  "description": "react-flybase-utils React component",
+  "version": "0.1.1",
+  "description": "A react component and function library for FlyBase",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "build": "nwb build-react-component",
+    "prepare": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
     "start": "nwb serve-react-demo",
     "test": "nwb test-react",
@@ -33,11 +34,12 @@
     "react": "^16.3.0",
     "react-dom": "^16.3.0"
   },
-  "author": "",
+  "author": "Josh Goodman",
   "homepage": "",
-  "license": "MIT",
-  "repository": "",
+  "license": "Apache 2.0",
+  "repository": "https://github.com/FlyBase/react-flybase-utils.git",
   "keywords": [
-    "react-component"
+    "react-component",
+    "FlyBase"
   ]
 }
