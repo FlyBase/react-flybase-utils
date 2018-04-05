@@ -36,7 +36,7 @@
   },
   "author": "Josh Goodman",
   "homepage": "",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "repository": "https://github.com/FlyBase/react-flybase-utils.git",
   "keywords": [
     "react-component",
