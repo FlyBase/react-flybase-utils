@@ -37,13 +37,13 @@ element.  The React element will have all FlyBase tags converted to their HTML e
 
 ##### Examples:
 
-```
+```javascript
 import React from 'react';
 import { SupSubFormatter } from 'react-flybase-utils';
 export default () => <SupSubFormatter text={'mysymbol<up>1234</up>'} />;
 ```
 or
-```
+```javascript
 import React from 'react';
 import { SupSubFormatter } from 'react-flybase-utils';
 export default () => <SupSubFormatter>{'mysymbol<up>1234</up>'}</SupSubFormatter>;
@@ -67,14 +67,14 @@ This component also passes the `@` delimited text through `<SupSubFormatter />` 
 
 ##### Examples:
 
-```
+```javascript
 import React from 'react';
 import { CurationStampParser } from 'react-flybase-utils';
 const myText = 'blah @mygene@ blah blah';
 export default () => <CurationStampParser>{myText}</CurationStampParser>;
 ```
 or
-```
+```javascript
 import React from 'react';
 import { CurationStampParser } from 'react-flybase-utils';
 const myText = 'blah @mygene@ blah blah';
@@ -97,13 +97,13 @@ A simple component for forming links to FlyBase reports.
 
 ##### Examples:
 
-```
+```javascript
 import React from 'react';
 import { ReportLink } from 'react-flybase-utils';
 export default () => <ReportLink fbid={'FBgn12345'} text={'mygene'} />;
 ```
 or
-```
+```javascript
 import React from 'react';
 import { ReportLink } from 'react-flybase-utils';
 export default () => <ReportLink fbid={'FBgn12345'}>{'mygene'}</ReportLink>;
@@ -126,7 +126,7 @@ Takes a string and converts all curation notations of `<up />` and `<down />` to
   
 ##### Examples:
 
-```
+```javascript
 import { Symbols } from 'react-flybase-utils';
 
 const asciiSymbol = Symbols.SgmlToAscii('mygene<up>12345</up>');
