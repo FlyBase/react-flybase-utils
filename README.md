@@ -21,21 +21,21 @@ npm install https://github.com/FlyBase/react-flybase-utils.git
 
 #### SupSubFormatter -
 
-#####Description
+##### Description
 Accepts a string via either the `text` parameter or a single `children`
 element which contains FlyBase notations for super and subscripts and returns a React
 element.  The React element will have all FlyBase tags converted to their HTML equivalent.
 
-#####Parameters:
+##### Parameters:
   - text - A string containing FlyBase symbol notations.
   - children - Same as text.
   
-#####Returns:
+##### Returns:
   - A react element with tags converted to their html equivalents.
 
-#####Tags currently converted: `<up />`, `<down />`
+##### Tags currently converted: `<up />`, `<down />`
 
-#####Examples:
+##### Examples:
 
 ```
 import React from 'react';
@@ -51,21 +51,21 @@ export default () => <SupSubFormatter>{'mysymbol<up>1234</up>'}</SupSubFormatter
 
 #### CurationStampParser -
 
-#####Description
+##### Description
 Accepts a string via either the `text` parameter or a single `children`
 element which contains FlyBase notations for embedded symbols in text statements.
 This component also passes the `@` delimited text through `<SupSubFormatter />` component.
 
-#####Parameters:
+##### Parameters:
   - text - A string containing FlyBase symbol notations.
   - children - Same as text.
   - baseURI - The base URI to use for the link.  Default: ''
   
-#####Returns:
+##### Returns:
   - A react fragment with stamped text entities converted into links to
     FlyBase searches or links directly to reports.
 
-#####Examples:
+##### Examples:
 
 ```
 import React from 'react';
@@ -83,19 +83,19 @@ export default () => <CurationStampParser text={myText} />;
                     
 #### ReportLink -
 
-#####Description
+##### Description
 A simple component for forming links to FlyBase reports.
 
-#####Parameters:
+##### Parameters:
   - fbid - The FlyBase ID to establish a link to.
   - text - A string to be used for link text.  Curation `<up/>` and `<down/>` tags are supported.
   - children - Same as text.
   - baseURI - The base URI to use for the link.  Default: ''
   
-#####Returns:
+##### Returns:
   - A react link element pointing directly to the report.
 
-#####Examples:
+##### Examples:
 
 ```
 import React from 'react';
