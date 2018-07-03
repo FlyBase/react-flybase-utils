@@ -46,16 +46,18 @@ function transform(node,index) {
  * @returns {React Element} - An element
  * @constructor
  */
-function SupSubFormatter({text}) {
+function SupSubFormatter({text,children}) {
   return (
     <Fragment>
-      { ReactHtmlParser(text, { transform: transform}) }
+      { text && ReactHtmlParser(text, { transform: transform}) }
+      { children && ReactHtmlParser(children, { transform: transform}) }
     </Fragment>
   );
 }
 
 SupSubFormatter.propTypes = {
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
+  children: PropTypes.string,
 };
 
 SupSubFormatter.defaultProps = {
