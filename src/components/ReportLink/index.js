@@ -11,13 +11,16 @@ import SupSubFormatter from '../SupSubFormatter';
  *
  * @param fbid - The FlyBase ID to link to.
  * @param text - The text to use for the link text.
- * @constructor
+ * @param baseURI - The base URI to use for the link.
  */
-function ReportLink({ fbid, text }) {
-  const url = `/reports/${fbid}`;
+function ReportLink({ fbid, text, children, baseURI }) {
+  const linkText = (text) ? text : children;
+  const url = `${baseURI}/reports/${fbid}`;
   return (
     <a href={url}>
-      <SupSubFormatter text={text} />
+      <SupSubFormatter>
+        {linkText}
+      </SupSubFormatter>
     </a>
   );
 }
@@ -31,7 +34,13 @@ ReportLink.propTypes = {
       );
     }
   },
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
+  children: PropTypes.string,
+  baseURI: PropTypes.string,
+}
+
+ReportLink.defaultProps = {
+  baseURI: '',
 }
 
 export default ReportLink;

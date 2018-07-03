@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import expect from 'expect';
 import { shallow } from 'enzyme';
 
@@ -17,21 +17,16 @@ describe('<SupSubFormatter />', () =>{
 
   it('Insertion symbol', () => {
     const wrapper = shallow(<SupSubFormatter text={'P{GawB}Eip63F-1<up>55B</up>'}/>);
-    const wanted = (
-      <Fragment>
-        {'P{GawB}Eip63F-1'}<sup>55B</sup>
-      </Fragment>
-    );
-    expect(wrapper.equals(wanted)).toEqual(true);
+    expect(wrapper.html()).toEqual('P{GawB}Eip63F-1<sup>55B</sup>');
   });
 
   it('Allele symbol', () => {
     const wrapper = shallow(<SupSubFormatter text={'cnn<up>HK21</up>'}/>);
-    const wanted = (
-      <Fragment>
-        cnn<sup>HK21</sup>
-      </Fragment>
-    );
-    expect(wrapper.equals(wanted)).toEqual(true);
+    expect(wrapper.html()).toEqual('cnn<sup>HK21</sup>');
+  });
+
+  it('Child string elements', () => {
+    const wrapper = shallow(<SupSubFormatter>{'cnn<up>HK21</up>'}</SupSubFormatter>);
+    expect(wrapper.html()).toEqual('cnn<sup>HK21</sup>');
   });
 });
