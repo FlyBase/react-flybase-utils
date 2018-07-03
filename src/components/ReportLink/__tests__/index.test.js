@@ -19,5 +19,10 @@ describe('<ReportLink />', () => {
     const wrapper = mount(<ReportLink fbid={'FBgn0000001'} text={'blah<down>down</down>'}/>);
     expect(wrapper.contains(<sub>down</sub>)).toBe(true);
   });
+
+  it('Link children w/ sub', () => {
+    const wrapper = mount(<ReportLink fbid={'FBgn0000001'}>{'blah<down>down</down>'}</ReportLink>);
+    expect(wrapper.contains(<sub>down</sub>)).toBe(true);
+  });
 });
 

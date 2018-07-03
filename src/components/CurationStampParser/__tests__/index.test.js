@@ -26,4 +26,29 @@ describe('<CurationStampParser />', () => {
     expect(wrapper.find('a[href="/search/Rnor%5CmyGene%5Bup%5D"]').length).toBe(1);
   });
 
+  it('Blank', () => {
+    const wrapper = shallow(<CurationStampParser text={''} />);
+    expect(wrapper.isEmptyRender()).toBe(true);
+  });
+
+  it('null', () => {
+    const wrapper = shallow(<CurationStampParser text={null} />);
+    expect(wrapper.isEmptyRender()).toBe(true);
+  });
+
+  it('Link via children', () => {
+    const wrapper = mount(<CurationStampParser>blah @myGene@ blah</CurationStampParser>);
+    expect(wrapper.find('a[href="/search/myGene"]').length).toBe(1);
+  });
+
+  it('Link with FBid (children)', () => {
+    const wrapper = mount(<CurationStampParser>blah @FBgn12345:myGene@ blah</CurationStampParser>);
+    expect(wrapper.find('a[href="/reports/FBgn12345"]').length).toBe(1);
+  });
+
+  it('Link with FBid (text)', () => {
+    const wrapper = mount(<CurationStampParser text={'blah @FBgn12345:myGene@ blah'} />);
+    expect(wrapper.find('a[href="/reports/FBgn12345"]').length).toBe(1);
+  });
+
 });
